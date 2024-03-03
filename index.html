@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipping Cards in Grid Layout</title>
+    <title>Flipping Cards in Square Grid Layout</title>
     <style>
         body {
             margin: 0;
@@ -21,6 +21,7 @@
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             grid-gap: 20px;
             justify-items: center;
+            width: 600px; /* Adjust the width as needed */
         }
 
         .card {
@@ -59,43 +60,25 @@
             background-color: #e74c3c;
             transform: rotateY(180deg);
         }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
-                grid-gap: 5vw;
-            }
-
-            .card {
-                width: 30vw;
-                height: 45vw;
-            }
-
-            .card-face {
-                font-size: 4vw;
-                border-radius: 2vw;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="grid-container">
         <!-- Cards -->
+        <!-- Adjust the number of cards here to create an n*n square grid -->
         <!-- Each card should have the class "card" and the onclick function "flipCard(this)" -->
         <!-- Front and back faces can be customized as needed -->
 
+        <!-- Example for a 3x3 grid -->
         <div class="card" onclick="flipCard(this)">
             <div class="card-face card-front">Front</div>
             <div class="card-face card-back">Back</div>
         </div>
-
         <!-- Repeat the above card structure for more cards -->
         <div class="card" onclick="flipCard(this)">
             <div class="card-face card-front">Front</div>
             <div class="card-face card-back">Back</div>
         </div>
-
         <!-- Add more cards here if needed -->
     </div>
 
@@ -106,3 +89,4 @@
     </script>
 </body>
 </html>
+
