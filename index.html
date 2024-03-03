@@ -31,9 +31,9 @@ body {
 }
 
 .card {
-    width: 100%;
+    width: calc(100% - 4px); /* Adjusted width to account for border width */
     height: 0;
-    padding-top: 150%; /* Aspect ratio of 1:1.5 for the cards */
+    padding-top: calc(150% - 4px); /* Adjusted padding-top to account for border width */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s;
