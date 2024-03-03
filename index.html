@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipping Cards in Grid Layout</title>
     <style>
-  body {
+ body {
     margin: 0;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -18,14 +18,14 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* Adjusted grid size */
-    grid-gap: 4%; /* Adjusted grid gap */
-    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted grid size */
+    grid-gap: 20px; /* Adjusted grid gap */
+    justify-content: center;
 }
 
 .card {
-    width: 30%; /* Adjusted card width */
-    height: 40vw; /* Adjusted card height for better proportion */
+    width: 200px; /* Adjusted card width */
+    height: 300px; /* Adjusted card height */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s;
@@ -44,10 +44,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4vw;
+    font-size: 24px;
     font-weight: bold;
     color: white;
-    border-radius: 2vw;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -62,20 +62,21 @@
 
 @media (max-width: 767px) {
     .grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(45%, 1fr)); /* Adjusted grid size for smaller screens */
-        grid-gap: 6%; /* Adjusted grid gap */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusted grid size for smaller screens */
+        grid-gap: 10px; /* Adjusted grid gap for smaller screens */
     }
 
     .card {
-        width: 45%; /* Adjusted card width for smaller screens */
-        height: 60vw; /* Adjusted card height for better proportion on smaller screens */
+        width: 150px; /* Adjusted card width for smaller screens */
+        height: 225px; /* Adjusted card height for smaller screens */
     }
 
     .card-face {
-        font-size: 6vw;
-        border-radius: 3vw;
+        font-size: 18px;
+        border-radius: 15px;
     }
 }
+
 
     </style>
 </head>
