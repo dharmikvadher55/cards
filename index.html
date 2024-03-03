@@ -18,14 +18,14 @@
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             grid-gap: 20px;
             justify-items: center;
         }
 
         .card {
-            width: 150px;
-            height: 225px;
+            width: 200px;
+            height: 300px;
             position: relative;
             transform-style: preserve-3d;
             transition: transform 0.8s;
@@ -44,7 +44,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 18px;
+            font-size: 24px;
             font-weight: bold;
             color: white;
             border-radius: 10px;
@@ -59,40 +59,22 @@
             background-color: #e74c3c;
             transform: rotateY(180deg);
         }
-
-        @media only screen and (max-width: 600px) {
-            .grid-container {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            }
-            .card {
-                width: 100px;
-                height: 150px;
-            }
-            .card-face {
-                font-size: 14px;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="grid-container">
-        <!-- Cards -->
-        <!-- You can add or remove cards as needed -->
-        <!-- The cards will automatically adjust based on the screen size -->
-        <!-- Adjust the content of each card as needed -->
+        <!-- Adjust the number of cards here -->
+        <!-- For example, for a 3x3 grid, you would have 9 cards -->
+        <!-- You can change the content of each card as needed -->
+        <!-- Add or remove cards as per your requirement -->
+        <!-- The cards will automatically align in a square grid -->
+
         <div class="card" onclick="flipCard(this)">
             <div class="card-face card-front">Front</div>
             <div class="card-face card-back">Back</div>
         </div>
-        <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-        <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-        <!-- Add more cards as needed -->
+
+        <!-- Add more cards here if needed -->
     </div>
 
     <script>
