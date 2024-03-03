@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipping Cards in Grid Layout</title>
-    <style>
-        body body {
+body {
     margin: 0;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -59,65 +52,18 @@
     background-color: #e74c3c;
     transform: rotateY(180deg);
 }
-    </style>
-</head>
-<body>
-    <div class="grid-container">
-        <!-- Card 1 -->
-        <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
 
-        <!-- Card 2 -->
-        <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+    }
 
-        <!-- Card 3 -->
-        <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
+    .card {
+        width: 30%;
+        height: 45%;
+    }
 
- <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-
- <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-
- <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-
- <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-
- <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-
- <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-
-        <!-- Add more cards as needed -->
-    </div>
-
-    <script>
-        function flipCard(card) {
-            card.classList.toggle('flipped');
-        }
-    </script>
-</body>
-</html>
+    .card-face {
+        font-size: 4vw;
+    }
+}
