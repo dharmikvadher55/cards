@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flipping Cards in Grid Layout</title>
+    <title>Flipping Card Grid</title>
     <style>
         body {
             margin: 0;
@@ -21,6 +21,10 @@
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             grid-gap: 20px;
             justify-items: center;
+        }
+
+        .card-container {
+            perspective: 1000px;
         }
 
         .card {
@@ -68,50 +72,12 @@
         <!-- You can change the content of each card as needed -->
         <!-- Add or remove cards as per your requirement -->
         <!-- The cards will automatically align in a square grid -->
-
-        <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
+        <div class="card-container">
+            <div class="card" onclick="flipCard(this)">
+                <div class="card-face card-front">Front</div>
+                <div class="card-face card-back">Back</div>
+            </div>
         </div>
- <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-         <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-         <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-         <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-         <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-         <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-         <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-         <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-         <div class="card" onclick="flipCard(this)">
-            <div class="card-face card-front">Front</div>
-            <div class="card-face card-back">Back</div>
-        </div>
-        
-
-        <!-- Add more cards here if needed -->
     </div>
 
     <script>
