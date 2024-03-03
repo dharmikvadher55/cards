@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipping Cards in Grid Layout</title>
     <style>
-      body {
+    body {
     margin: 0;
     padding: 2vw; /* Using vw for padding */
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh; /* Using min-height for better responsiveness */
     background-color: #f0f0f0;
 }
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10vw, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     grid-gap: 2vw; /* Using vw for grid gap */
     justify-items: center;
     width: 90vw; /* Using vw for width */
@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2vw;
+    font-size: 3vw; /* Adjust font size for better readability */
     font-weight: bold;
     color: white;
     border-radius: 1vw;
@@ -67,14 +67,22 @@
 
 /* Media queries for responsiveness */
 @media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust column width for smaller screens */
+    }
+
     .card-face {
-        font-size: 1.5vw; /* Adjust font size for smaller screens */
+        font-size: 4vw; /* Further adjust font size for smaller screens */
     }
 }
 
 @media screen and (max-width: 480px) {
+    .grid-container {
+        grid-gap: 1vw; /* Decrease grid gap for smaller screens */
+    }
+
     .card-face {
-        font-size: 1.2vw; /* Further adjust font size for smaller screens */
+        font-size: 5vw; /* Further adjust font size for smaller screens */
     }
 }
 
