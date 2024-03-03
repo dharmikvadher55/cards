@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipping Cards in Grid Layout</title>
     <style>
-        body body {
+      body {
     margin: 0;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -18,14 +18,14 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10vw, 1fr));
-    grid-gap: 2vw;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr)); /* Adjust the width of columns */
+    grid-gap: 5%; /* Adjust the gap between cards */
     justify-items: center;
 }
 
 .card {
-    width: 10vw;
-    height: 15vw;
+    width: 100%; /* Adjust the width of cards */
+    padding-top: 150%; /* Set the height based on the width to maintain aspect ratio */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s;
@@ -44,10 +44,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2vw;
+    font-size: 4vw; /* Adjust the font size relative to viewport width */
     font-weight: bold;
     color: white;
-    border-radius: 1vw;
+    border-radius: 5%; /* Adjust the border radius */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -59,6 +59,19 @@
     background-color: #e74c3c;
     transform: rotateY(180deg);
 }
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(40%, 1fr)); /* Adjust column width for smaller screens */
+        grid-gap: 5%; /* Adjust gap between cards for smaller screens */
+    }
+
+    .card {
+        font-size: 5vw; /* Adjust font size for smaller screens */
+    }
+}
+
     </style>
 </head>
 <body>
