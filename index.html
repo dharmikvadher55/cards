@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipping Cards in Grid Layout</title>
     <style>
-        body body {
+      body {
     margin: 0;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -18,14 +18,13 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10vw, 1fr));
     grid-gap: 2vw;
     justify-items: center;
 }
 
 .card {
-    width: 10vw;
-    height: 15vw;
+    width: 30vw; /* Adjust according to your preference */
+    height: 45vw; /* Adjust according to your preference */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s;
@@ -59,6 +58,29 @@
     background-color: #e74c3c;
     transform: rotateY(180deg);
 }
+
+@media only screen and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Three columns for tablets and larger devices */
+    }
+
+    .card {
+        width: 20vw; /* Adjust width for larger devices */
+        height: 30vw; /* Adjust height for larger devices */
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(5, 1fr); /* Five columns for desktops */
+    }
+
+    .card {
+        width: 15vw; /* Adjust width for larger desktop devices */
+        height: 22.5vw; /* Adjust height for larger desktop devices */
+    }
+}
+
     </style>
 </head>
 <body>
