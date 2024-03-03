@@ -31,9 +31,9 @@ body {
 }
 
 .card {
-    width: 100%;
-    height: calc(0px - 4px); /* Adjusted height to account for border width */
-    padding-top: calc(150% - 4px); /* Aspect ratio of 1:1.5 for the cards with border width adjustment */
+    width: calc(100% - 4px); /* Adjusted width to account for border width */
+    height: 300px;
+    padding-top: 4px; /* Adjusted padding-top to account for border width */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s;
@@ -42,7 +42,6 @@ body {
     justify-content: center;
     align-items: center; /* Center content horizontally and vertically */
 }
-
 .card.flipped {
     transform: rotateY(180deg);
 }
