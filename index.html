@@ -5,86 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipping Cards in Grid Layout</title>
     <style>
-   body {
-    margin: 0;
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
+  :root {
+  --grid-gap: 2vw;
+  --card-width-mobile: 30vw;
+  --card-height-mobile: 45vw;
+  --card-width-desktop: 15vw;
+  --card-height-desktop: 22.5vw;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
 }
 
 .grid-container {
-    display: grid;
-    grid-gap: 2vw;
-    justify-items: center;
-    padding: 0 20px; /* Add padding to the grid container */
-    max-width: 1200px; /* Set maximum width for the grid container */
-    margin: 0 auto; /* Center the grid container */
+  display: grid;
+  grid-gap: var(--grid-gap);
+  justify-items: center;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .card {
-    width: 30vw; /* Adjust according to your preference */
-    height: 45vw; /* Adjust according to your preference */
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.8s;
-    cursor: pointer;
+  width: var(--card-width-mobile);
+  height: var(--card-height-mobile);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
 }
 
 .card.flipped {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .card-face {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2vw;
-    font-weight: bold;
-    color: white;
-    border-radius: 1vw;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(var(--card-width-mobile) * 0.07);
+  font-weight: bold;
+  color: white;
+  border-radius: calc(var(--card-width-mobile) * 0.033);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-front {
-    background-color: #3498db;
+  background-color: #3498db;
 }
 
 .card-back {
-    background-color: #e74c3c;
-    transform: rotateY(180deg);
+  background-color: #e74c3c;
+  transform: rotateY(180deg);
 }
 
 @media only screen and (min-width: 768px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Three columns for tablets and larger devices */
-        padding: 0; /* Remove padding for tablets and larger devices */
-    }
+  .grid-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+  }
 
-    .card {
-        width: calc((100% - 4vw) / 3); /* Adjust width for tablets and larger devices with proper spacing */
-        height: calc((100% - 4vw) / 3 * 1.5); /* Adjust height for tablets and larger devices */
-    }
+  .card {
+    width: calc((100% - var(--grid-gap) * 2) / 3);
+    height: calc((100% - var(--grid-gap) * 2) / 3 * 1.5);
+    font-size: calc(var(--card-width-mobile) * 0.07);
+    border-radius: calc(var(--card-width-mobile) * 0.033);
+  }
 }
 
 @media only screen and (min-width: 1200px) {
-    .grid-container {
-        grid-template-columns: repeat(5, 1fr); /* Five columns for desktops */
-    }
+  .grid-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
 
-    .card {
-        width: calc((100% - 8vw) / 5); /* Adjust width for desktops with proper spacing */
-        height: calc((100% - 8vw) / 5 * 1.5); /* Adjust height for desktops */
-    }
+  .card {
+    width: calc((100% - var(--grid-gap) * 4) / 5);
+    height: calc((100% - var(--grid-gap) * 4) / 5 * 1.5);
+    font-size: calc(var(--card-width-desktop) * 0.07);
+    border-radius: calc(var(--card-width-desktop) * 0.033);
+  }
 }
-
 
     </style>
 </head>
