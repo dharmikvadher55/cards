@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flipping Cards in Grid Layout</title>
     <style>
-       body {
+     body {
     margin: 0;
     padding: 20px;
     font-family: Arial, sans-serif;
@@ -18,14 +18,14 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(10vw, 1fr));
-    grid-gap: 2vw;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
     justify-items: center;
 }
 
 .card {
-    width: 10vw;
-    height: 15vw;
+    width: 200px;
+    height: 300px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s;
@@ -44,10 +44,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2vw;
+    font-size: 24px;
     font-weight: bold;
     color: white;
-    border-radius: 1vw;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -63,15 +63,13 @@
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
     .grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
-        grid-gap: 5vw;
+        grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+        grid-gap: 10px;
     }
 
     .card {
-        width: 30vw;
-        height: 45vw;
-        font-size: 4vw;
-        border-radius: 2vw;
+        width: 40%;
+        height: 60vw; /* Adjust height based on aspect ratio */
     }
 }
 
